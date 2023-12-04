@@ -8,6 +8,12 @@ console.log(coordinates);
         zoom: 9 // starting zoom
     });
 console.log(coordinates);
-const marker = new mapboxgl.Marker()
+
+const marker = new mapboxgl.Marker( { color: 'red' } )
 .setLngLat(coordinates)
+.setPopup(
+    new mapboxgl.Popup({ offset: 25 }).setHTML(
+        "<p>Welcome to Wanderlust</p>"
+    )
+)
 .addTo(map)
